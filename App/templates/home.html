@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Home Page
+{%endblock title %} {% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+{% endblock extrahead %} {% block content %}
+<div class="filters">
+  <input type="text" id="name-search" placeholder="Search by name..." />
+  <div class="tag-list">
+    {% for tag in Tags %}<button class="tag" data-tag="{{tag.name|lower}}">
+      {{tag.name}}
+    </button>
+    {% endfor %}
+  </div>
+  <div class="project-list">
+    {% for projecto in Projects %}
+    <div
+      class="project"
+      data-name="{{projecto.title|lower}}"
+      data-tags="{{projecto.tags.all|join:', '|lower}}"
+    >
+      <h2>
+        <a href="{% url 'project' projecto.id %}">{{projecto.title}}</a>
+      </h2>
+      <p>{{projecto.description}}</p>
+      <p>Tags: {{projecto.tags.all|join:', '}}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %} {% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
