@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Tag, Project
+from .models import Tag, Project, UserProfile
 
 
 
@@ -13,7 +13,8 @@ def say_hello(request):
 def home(request):
     Projects = Project.objects.all()
     Tags = Tag.objects.all()
-    return render(request, "home.html",{"Projects":Projects,"Tags":Tags})
+    Users = UserProfile.objects.all()
+    return render(request, "home.html",{"Projects":Projects,"Tags":Tags, "Users":Users})
 
 def contact(request):
     return render(request,"contact.html")

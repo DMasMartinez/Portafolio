@@ -1,7 +1,18 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Project, Tag, ProjectImage
+from .models import Project, Tag, ProjectImage, UserProfile, UserProfileImage
+
+class UserImageInline(admin.TabularInline):
+    model = UserProfileImage
+    extra = 1
+
+class UserAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+    inlines = [UserImageInline]
+    search_fields = ("name","description")
+
+
 
 class ProjectImageInline(admin.TabularInline):
     model = ProjectImage
@@ -20,3 +31,5 @@ class TagAdmin(admin.ModelAdmin):
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(ProjectImage)
+admin.site.register(UserProfile, UserAdmin)
+admin.site.register(UserProfileImage)

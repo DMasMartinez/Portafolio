@@ -45,4 +45,10 @@ class ProjectImage(models.Model):
     def __str__(self):
         return f"{self.project.title} Image"
     
+class UserProfile(models.Model):
+    name = models.CharField(max_length = 200)
+    description = models.TextField()
 
+class UserProfileImage(models.Model):
+    usuario = models.ForeignKey(UserProfile, related_name="images", on_delete=models.CASCADE)
+    image = models.FileField(upload_to="project_images/")
