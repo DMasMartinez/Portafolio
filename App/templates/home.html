@@ -3,20 +3,15 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
 {% endblock extrahead %} {% block content %}
 <div class="filters">
-  <div class="project-card">
-    <div class="carousel-images">
-      {% for user in Users.images.all %}
-      <img src="{{user.image.url}}" alt="user image" />
-      {% endfor %}
-    </div>
-    <div class="project-info">
+  <div class="carduser">
       {% for user in Users %} {% for use in user.images.all %}
-      <img src="{{use.image.url}}" alt="user image" />
+        <div class = "container">
+          <img src="{{use.image.url}}" alt="user image" class="center" />
+        </div>
       {% endfor %}
       <h2>{{user.name}}</h2>
       <p>{{user.description}}</p>
       {% endfor %}
-    </div>
   </div>
   <input type="text" id="name-search" placeholder="Search by name..." />
   <div class="tag-list">

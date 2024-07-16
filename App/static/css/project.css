@@ -18,11 +18,18 @@
 }
 
 /* Adjustments to previous styles for consistency */
-h1,
-p {
+
+.project-info p {
   margin-bottom: 20px;
 }
 
+.project-info h1 {
+  margin-bottom: 20px;
+}
+
+img {
+  margin-top: 15px;
+}
 /* Carousel */
 .carousel {
   flex: 1;

@@ -48,6 +48,8 @@ class ProjectImage(models.Model):
 class UserProfile(models.Model):
     name = models.CharField(max_length = 200)
     description = models.TextField()
+    linkedin = models.URLField(max_length=200, blank=True)
+    github = models.URLField(max_length=200, blank=True)
 
 class UserProfileImage(models.Model):
     usuario = models.ForeignKey(UserProfile, related_name="images", on_delete=models.CASCADE)

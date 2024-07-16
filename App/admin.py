@@ -10,7 +10,7 @@ class UserImageInline(admin.TabularInline):
 class UserAdmin(admin.ModelAdmin):
     list_display = ("name",)
     inlines = [UserImageInline]
-    search_fields = ("name","description")
+    search_fields = ("name","description","linkedin","github")
 
 
 

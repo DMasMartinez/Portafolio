@@ -10,6 +10,15 @@
 {% endblock extrahead %}
 
 {% block content %}
-    <p>this is the contact page!</p>
+    <div class="marco">
+    {% for usuario in User %}
+        <div class="links">
+            <img src="../../media/project_images/linkedinlogo_resized.jpg" alt="linkedin" id="imagen"/>
+            <a href="{{usuario.linkedin}}">Linkedin</a>
+            <img src="../../media/project_images/gitlogo.jpg" alt="github" id="imagen"/>
+            <a href="{{usuario.github}}">Github</a>
+        </div>
+    {% endfor %}
+    </div>
 {% endblock content %}
 
