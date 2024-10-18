@@ -9,10 +9,13 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 import os
 import cloudinary_storage
+
+
+
  
 
 
@@ -88,6 +91,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+DATABASES['default']=dj_database_url.parse("postgresql://djangodatabase_ur4r_user:LnpHfmrPmFbqDWdauRWPRNsmSifZC1dB@dpg-cs97ghpu0jms7387s6mg-a.oregon-postgres.render.com/djangodatabase_ur4r")
 
 
 # Password validation
