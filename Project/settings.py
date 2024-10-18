@@ -28,11 +28,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3w+(*x3jy4cmpskkr3hms_yde$zfy_pj$*_!sc*(7gin^*7io('
+# SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = os.environ.get("DEBUG","False").lower() == True
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -91,6 +94,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# database_url = os.environ.get("DATABASE_URL")
+# DATABASES['default']=dj_database_url.parse(database_url)
+
 DATABASES['default']=dj_database_url.parse("postgresql://djangodatabase_ur4r_user:LnpHfmrPmFbqDWdauRWPRNsmSifZC1dB@dpg-cs97ghpu0jms7387s6mg-a.oregon-postgres.render.com/djangodatabase_ur4r")
 
 
