@@ -23,4 +23,4 @@ urlpatterns = [
     path('',include('App.url')),
     path('admin/', admin.site.urls),
     path('say_hello',views.say_hello)
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
