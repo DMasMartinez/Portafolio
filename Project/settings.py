@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-3w+(*x3jy4cmpskkr3hms_yde$zfy_pj$*_!sc*(7gin^*7io(
 DEBUG = True
 # DEBUG = os.environ.get("DEBUG","False").lower() == True
 
-ALLOWED_HOSTS = ['portafolio-0k2t.onrender.com']
+ALLOWED_HOSTS = ['portafolio-0k2t.onrender.com','127.0.0.1']
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
@@ -134,8 +134,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = 'App/static/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
