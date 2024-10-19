@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary_storage.storage import MediaCloudinaryStorage
 import datetime
 from django.utils import timezone
 
@@ -40,7 +41,7 @@ class Project(models.Model):
 class ProjectImage(models.Model):
     project = models.ForeignKey(Project, related_name="images", on_delete=models.CASCADE)
     # image = models.ImageField(upload_to="project_images/")
-    image = models.FileField(upload_to="project_images/")
+    image = models.FileField(upload_to="project_images/", storage=MediaCloudinaryStorage())
 
     def __str__(self):
         return f"{self.project.title} Image"
@@ -53,4 +54,4 @@ class UserProfile(models.Model):
 
 class UserProfileImage(models.Model):
     usuario = models.ForeignKey(UserProfile, related_name="images", on_delete=models.CASCADE)
-    image = models.FileField(upload_to="project_images/")
+    image = models.FileField(upload_to="project_images/", storage=MediaCloudinaryStorage())
