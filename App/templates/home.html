@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block title %} Home Page
 {%endblock title %} {% block extrahead %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'App/css/home.css' %}" />
 {% endblock extrahead %} {% block content %}
 <div class="filters">
   <div class="carduser">
@@ -37,5 +37,5 @@
   </div>
 </div>
 {% endblock content %} {% block extra_js %}
-<script src="{% static 'js/home.js' %}"></script>
+<script src="{% static 'App/js/home.js' %}"></script>
 {% endblock %}

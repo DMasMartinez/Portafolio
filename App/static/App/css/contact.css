@@ -1,0 +1,43 @@
+.marco {
+    margin-top: 270px;
+    text-align: center;
+    border: 10px solid;
+    border-radius: 15px;
+    border-color: #007bff;
+
+  }
+  
+ .marco .links a{
+    display: inline-block;
+    margin: 0px 20px;
+    vertical-align: middle;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    
+  }
+  .marco #imagen{
+    width: 100px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 5px;
+    border: none;
+    padding: 0px 10px;
+    border-radius: 5px;
+    margin: auto;
+    width: 60px;
+  }
+
+  .links:hover {
+    background-color: #007bff;
+  }
+
+  /* #0056b3 flex acomoda los elementos uno al lado del otro siempre y cuando quepa esto podemos solventarlo con width
+  pero si queremos conservar el tamano en este caso porcentaje para que entre todo debemos usar flex-wrap esto en el contenedor de las card
+  ahora si queremos darle un espaciado en la etiqueta del contenedor usamos gap pero si el espacio de nuestras card rebasa podemos
+  solventarlo con width de esta manera width - calc(33%-gap(10px))*/

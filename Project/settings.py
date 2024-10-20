@@ -41,7 +41,7 @@ ALLOWED_HOSTS = ['portafolio-0k2t.onrender.com','127.0.0.1']
 # Application definition
 # 'whitenoise.runserver_nostatic',
 INSTALLED_APPS = [
-    'App',
+    'App.apps.AppConfig',
     'cloudinary_storage',
     'cloudinary',
     'django.contrib.admin',
@@ -135,11 +135,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-#     'App/static',
-# ]
-STATIC_ROOT = os.path.join(BASE_DIR,"static")
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+STATIC_ROOT = 'c:/estatico'
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
